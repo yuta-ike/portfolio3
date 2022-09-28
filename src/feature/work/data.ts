@@ -10,7 +10,7 @@ const WORKS: Work[] = [
     summary:
       "LINE Botを作成できる教育用ビジュアルプログラミングツールです。プログラムが即時に実機に反映されるほか、実行フローがリアルタイムで可視化されるなど、子供たちが躓くことのないよう工夫しています。",
     awards: ["技育展2022 チーム開発 最優秀賞"],
-    imageUrl: "/line-bot-maker/demo.gif",
+    imageUrl: "/line-bot-maker/demo.png",
     movieUrl:
       "https://user-images.githubusercontent.com/38308823/191561558-c18b676f-7e45-47d8-a7a7-d9b90227e9d7.mp4",
     period: {
