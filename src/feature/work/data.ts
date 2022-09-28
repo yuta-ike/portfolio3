@@ -383,63 +383,63 @@ const WORKS: Work[] = [
       },
     ],
   },
-  {
-    priority: 15,
-    type: "Web",
-    title: "逆お題箱",
-    summary:
-      "見たい絵のお題を投稿したり、他の人のお題に絵を投稿したりするサービスです。メール通知、レスポンシブ対応等を実装しています。既にリリース済みです。",
-    imageUrl: "/gyaku-odaibako/demo.png",
-    movieUrl:
-      "https://onedrive.live.com/?cid=1A277CC5A368BBA5&id=1A277CC5A368BBA5%21200&parId=root&o=OneUp",
-    period: {
-      start: "2021-03",
-    },
-    duration: {
-      month: 6,
-    },
-    links: [
-      {
-        url: "https://github.com/yuta-ike/gyaku-odaibako",
-        label: "github",
-        type: "github",
-      },
-      { url: "https://twitter.com/gyaku_odaibako", label: "twitter", type: "twitter" },
-      {
-        url: "https://docs.google.com/presentation/d/1IpJnOaWIS2BUv9DDzcSEJSgfSYi9w01ma5xSYmns-JM/edit?usp=sharing",
-        label: "slide",
-        type: "slide",
-      },
-      { url: "https://gyaku-odai.vercel.app/", label: "プロダクト", type: "demo" },
-    ],
-    competition: ["技育展2022 世の中を楽しくする部門"],
-    members: { total: 3, description: "エンジニア2人、イラストレーター1人" },
-    roles: ["フロント", "サーバー"],
-    layout: {
-      blur: true,
-    },
-    techStack: [
-      {
-        category: "frontend",
-        techs: [
-          "typescript",
-          "react",
-          "nextjs",
-          "tailwindcss",
-          { label: "GenQL", id: "genql" },
-          "vercel",
-        ],
-      },
-      {
-        category: "backend",
-        techs: ["hasura", { label: "Puppeteer", id: "puppeteer" }, "gas", "heroku", "docker"],
-      },
-      {
-        category: "others",
-        techs: [{ label: "Cloudinary", id: "cloudinary" }, "firebase_auth"],
-      },
-    ],
-  },
+  // {
+  //   priority: 15,
+  //   type: "Web",
+  //   title: "逆お題箱",
+  //   summary:
+  //     "見たい絵のお題を投稿したり、他の人のお題に絵を投稿したりするサービスです。メール通知、レスポンシブ対応等を実装しています。既にリリース済みです。",
+  //   imageUrl: "/gyaku-odaibako/demo.png",
+  //   movieUrl:
+  //     "https://onedrive.live.com/?cid=1A277CC5A368BBA5&id=1A277CC5A368BBA5%21200&parId=root&o=OneUp",
+  //   period: {
+  //     start: "2021-03",
+  //   },
+  //   duration: {
+  //     month: 6,
+  //   },
+  //   links: [
+  //     {
+  //       url: "https://github.com/yuta-ike/gyaku-odaibako",
+  //       label: "github",
+  //       type: "github",
+  //     },
+  //     { url: "https://twitter.com/gyaku_odaibako", label: "twitter", type: "twitter" },
+  //     {
+  //       url: "https://docs.google.com/presentation/d/1IpJnOaWIS2BUv9DDzcSEJSgfSYi9w01ma5xSYmns-JM/edit?usp=sharing",
+  //       label: "slide",
+  //       type: "slide",
+  //     },
+  //     { url: "https://gyaku-odai.vercel.app/", label: "プロダクト", type: "demo" },
+  //   ],
+  //   competition: ["技育展2022 世の中を楽しくする部門"],
+  //   members: { total: 3, description: "エンジニア2人、イラストレーター1人" },
+  //   roles: ["フロント", "サーバー"],
+  //   layout: {
+  //     blur: true,
+  //   },
+  //   techStack: [
+  //     {
+  //       category: "frontend",
+  //       techs: [
+  //         "typescript",
+  //         "react",
+  //         "nextjs",
+  //         "tailwindcss",
+  //         { label: "GenQL", id: "genql" },
+  //         "vercel",
+  //       ],
+  //     },
+  //     {
+  //       category: "backend",
+  //       techs: ["hasura", { label: "Puppeteer", id: "puppeteer" }, "gas", "heroku", "docker"],
+  //     },
+  //     {
+  //       category: "others",
+  //       techs: [{ label: "Cloudinary", id: "cloudinary" }, "firebase_auth"],
+  //     },
+  //   ],
+  // },
   {
     priority: 15,
     type: "Web",

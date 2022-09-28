@@ -59,18 +59,18 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
           >
             <div className="flex-1 p-4 sm:mx-4">
               <div>
-                <h3 className="inline font-heading text-xl font-bold">{work.title}</h3>
+                <h3 className="inline text-xl font-bold font-heading">{work.title}</h3>
                 <span className="ml-2 rounded-full border border-slate-400 py-0.5 px-2 text-sm">
                   {work.type}
                 </span>
               </div>
               <p className="mt-1 text-sm">{work.summary}</p>
               {work.awards != null && 0 < work.awards.length && (
-                <div className="mt-2 flex flex-wrap">
+                <div className="flex flex-wrap mt-2">
                   {work.awards.map((award) => (
                     <span
                       key={award}
-                      className="mt-2 mr-1 block w-max rounded-full bg-yellow-500 px-2 py-1 text-sm font-bold text-white"
+                      className="block px-2 py-1 mt-2 mr-1 text-sm font-bold text-white bg-yellow-500 rounded-full w-max"
                     >
                       {award}
                     </span>
@@ -81,7 +81,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
             <AnimatePresence>
               <motion.div
                 layoutId={`thumbnail-${work.title}`}
-                className="relative mr-4 h-full max-h-[90%] w-full flex-1 overflow-hidden rounded"
+                className="relative mr-4 h-full max-h-[90%] min-h-[200px] w-full flex-1 overflow-hidden rounded"
               >
                 <Image src={work.imageUrl} alt="" objectFit="cover" layout="fill" />
               </motion.div>
@@ -104,7 +104,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
           >
             <motion.div
               layoutId={`thumbnail-${work.title}`}
-              className="relative aspect-video w-full"
+              className="relative w-full aspect-video"
             >
               {work.layout?.blur ? (
                 <>
@@ -124,18 +124,18 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
             </motion.div>
             <div className="p-4">
               <div>
-                <h3 className="inline font-heading text-xl font-bold">{work.title}</h3>
+                <h3 className="inline text-xl font-bold font-heading">{work.title}</h3>
                 <span className="ml-2 rounded-full border border-slate-400 px-2 py-0.5 text-sm">
                   {work.type}
                 </span>
               </div>
               <p className="mt-1 text-sm">{work.summary}</p>
               {work.awards != null && 0 < work.awards.length && (
-                <div className="mt-2 flex flex-wrap">
+                <div className="flex flex-wrap mt-2">
                   {work.awards.map((award) => (
                     <span
                       key={award}
-                      className="mt-2 mr-1 block w-max rounded-full bg-yellow-500 px-2 py-1 text-sm font-bold text-white"
+                      className="block px-2 py-1 mt-2 mr-1 text-sm font-bold text-white bg-yellow-500 rounded-full w-max"
                     >
                       {award}
                     </span>

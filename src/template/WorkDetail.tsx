@@ -3,6 +3,7 @@ import { FiX, FiGithub, FiTwitter, FiFile, FiExternalLink, FiLink2 } from "react
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import classNames from "classnames"
 
 import OuterLink from "@/view/common/OuterLink"
 import { PRE_DEFINED_TECHS, Work } from "@/feature/work/type"
@@ -65,16 +66,18 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
 
   return (
     <div>
-      <div className="sticky top-0 z-10 p-4">
+      <div className="sticky top-0 z-10 flex items-center justify-between p-4">
         <button className="" onClick={() => router.back()}>
           <FiX size={48} className="text-stone-400" strokeWidth={1} />
         </button>
       </div>
-
-      <div className="w-full max-w-6xl p-2 mx-auto sm:p-8">
-        <motion.div layoutId={work.title} className="flex space-x-8 h-max">
-          <div className="relative flex flex-col justify-center">
-            <div className="flex items-center justify-between w-full">
+      <div className="w-full max-w-6xl px-0 py-8 mx-auto sm:px-8">
+        <motion.div
+          layoutId={work.title}
+          className="flex flex-col items-center justify-center space-y-8 h-max lg:flex-row lg:space-x-8"
+        >
+          <div className="relative flex max-w-3xl flex-col justify-center px-6 md:px-0 lg:mr-12 lg:max-w-md lg:py-[64px]">
+            <div className="flex flex-col items-center justify-between w-full lg:flex-row">
               <div>
                 <h1 className="inline text-2xl font-bold font-heading">{work.title}</h1>
                 <span className="ml-2 rounded-full border border-slate-400 py-0.5 px-2">
@@ -84,15 +87,15 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
               {demoUrl != null && (
                 <OuterLink
                   href={demoUrl.url}
-                  className="flex items-center px-2 py-1 mt-2 mr-2 leading-none rounded hover:bg-black/5"
+                  className="flex items-center px-2 py-1 mx-2 mt-2 leading-none rounded w-max shrink-0 text-black/80 hover:bg-black/5"
                 >
-                  <FiExternalLink size={20} />
-                  <span className="mt-0.5 ml-2">アクセス</span>
+                  <FiExternalLink size={16} />
+                  <span className="mt-0.5 ml-2 text-sm">アクセス</span>
                 </OuterLink>
               )}
             </div>
 
-            <p className="mt-3">{work.summary}</p>
+            <p className="mt-3 leading-loose">{work.summary}</p>
             {work.awards != null && 0 < work.awards.length && (
               <div className="flex flex-wrap mt-2">
                 {work.awards.map((award) => (
@@ -105,7 +108,7 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
                 ))}
               </div>
             )}
-            <div className="absolute bottom-0 right-0 flex overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400">
+            <div className="absolute bottom-0 right-0 hidden overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 lg:flex">
               {links?.map((link) => {
                 const Icon = Icons[link.type]
                 return (
@@ -120,7 +123,10 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
               })}
             </div>
           </div>
-          <motion.div layoutId={`thumbnail-${work.title}`} className="relative w-[600px] shrink-0">
+          <motion.div
+            layoutId={`thumbnail-${work.title}`}
+            className={classNames("relative mx-auto", "max-w-full")}
+          >
             <video
               src={
                 work.movieUrl?.startsWith("https://drive.google.com/file/d/")
@@ -139,9 +145,23 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
               className="mx-auto max-h-[640px]"
             />
           </motion.div>
+          <div className="flex mx-6 ml-auto overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 sm:mx-auto lg:hidden">
+            {links?.map((link) => {
+              const Icon = Icons[link.type]
+              return (
+                <OuterLink
+                  key={link.url}
+                  href={link.url}
+                  className="block px-3 py-2 transition rounded-full text-stone-500 hover:bg-stone-100 hover:text-sky-500"
+                >
+                  <Icon size={20} />
+                </OuterLink>
+              )
+            })}
+          </div>
         </motion.div>
-        <div className="flex w-full mt-24 space-x-8">
-          <div className="sticky top-0 w-[240px] shrink-0 text-sm text-black/70">
+        <div className="flex w-full px-6 mt-16 lg:mt-24">
+          <div className="sticky top-0 mr-8 hidden w-[16vw] shrink-0 text-sm text-black/70 sm:block">
             <h4 className="font-bold font-heading">目次</h4>
             <ol className="flex flex-col mt-2">
               {tocs.map((heading) => (

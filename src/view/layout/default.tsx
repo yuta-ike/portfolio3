@@ -29,6 +29,11 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
       >
         {children}
       </motion.main>
+      <footer className="flex h-[160px] items-center justify-center bg-stone-100 font-heading font-bold">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          トップへ戻る
+        </button>
+      </footer>
     </>
   )
 }
