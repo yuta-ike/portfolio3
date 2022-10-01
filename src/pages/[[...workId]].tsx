@@ -23,7 +23,7 @@ const Index: NextPage = () => {
       ) : (
         <div className="max-w-6xl p-2 mx-auto sm:p-8">
           <h1 className="text-3xl font-bold text-center font-heading">@yuta-ike</h1>
-          <h2 className="mt-12 text-xl font-bold font-heading">就業型インターン</h2>
+          {/* <h2 className="mt-12 text-xl font-bold font-heading">就業型インターン</h2>
           <div className="flex p-1 mt-4 space-x-4 overflow-x-scroll">
             <section className="w-[360px] min-w-[300px] rounded-lg bg-white px-4 py-3 shadow">
               <h3 className="font-bold font-heading">SWEインターン@Mercari</h3>
@@ -48,7 +48,7 @@ const Index: NextPage = () => {
                 Vue）、バックエンド（PHP）ともに取り組むことができました。
               </p>
             </section>
-          </div>
+          </div> */}
           <h2 className="mt-12 text-xl font-bold font-heading">制作物</h2>
           <div className="grid grid-flow-row-dense grid-cols-1 gap-4 mt-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 lg:grid-cols-3">
             {WORKS.map((work, i) => (
