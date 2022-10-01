@@ -145,15 +145,18 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
               })}
             </motion.div>
           </div>
-          <motion.div
-            layoutId={`thumbnail-${work.title}`}
-            className={classNames("relative mx-auto", "max-w-full")}
-          >
+          <div className={classNames("relative mx-auto", "max-w-full")}>
             {work.movieUrl == null ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={work.imageUrl} alt="" className="object-fit mx-auto max-h-[640px]" />
+              <motion.img
+                // layoutId={`thumbnail-${work.title}`}
+                src={work.imageUrl}
+                alt=""
+                className="object-fit mx-auto max-h-[640px]"
+              />
             ) : (
-              <video
+              <motion.video
+                // layoutId={`thumbnail-${work.title}`}
                 src={
                   work.movieUrl?.startsWith("https://drive.google.com/file/d/")
                     ? `https://drive.google.com/uc?id=${
@@ -171,7 +174,7 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
                 className="mx-auto max-h-[640px]"
               />
             )}
-          </motion.div>
+          </div>
           <div className="flex mx-6 ml-auto overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 sm:mx-auto lg:hidden">
             {links?.map((link) => {
               const Icon = Icons[link.type]

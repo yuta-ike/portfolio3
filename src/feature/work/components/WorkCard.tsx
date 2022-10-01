@@ -66,7 +66,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
             <section
               // ref={sectionRef}
               className={classNames(
-                "flex h-full w-full flex-col-reverse items-center overflow-hidden rounded-lg bg-white shadow transition duration-300 sm:flex-row",
+                "flex h-full w-full flex-col-reverse items-center rounded-lg bg-white shadow transition duration-300 sm:flex-row",
                 className,
               )}
             >
@@ -93,7 +93,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
               </div>
               <AnimatePresence>
                 <motion.div
-                  // layoutId={`thumbnail-${work.title}`}
+                  layoutId={`thumbnail-${work.title}`}
                   className="relative mr-4 h-full max-h-[90%] min-h-[200px] w-full flex-1 overflow-hidden rounded"
                 >
                   <Image src={work.imageUrl} alt="" className="object-cover" sizes="100vw" fill />
@@ -128,11 +128,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, className }) => {
             <section
               onClick={() => setIsExpanded(!isExpanded)}
               className={classNames(
-                "h-full w-full overflow-hidden rounded-lg bg-white shadow transition duration-300 sm:rounded-none sm:bg-transparent sm:shadow-none",
+                "h-full w-full rounded-lg bg-white shadow transition duration-300 sm:rounded-none sm:bg-transparent sm:shadow-none",
               )}
             >
               <motion.div
-                // layoutId={`thumbnail-${work.title}`}
+                layoutId={`thumbnail-${work.title}`}
                 className="relative w-full aspect-video"
               >
                 {work.layout?.blur ? (
