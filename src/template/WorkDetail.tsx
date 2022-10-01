@@ -67,7 +67,11 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
   return (
     <div>
       <div className="sticky top-0 z-10 flex items-center justify-between p-4">
-        <button className="" onClick={() => router.back()}>
+        <button
+          onClick={() => {
+            router.push("/")
+          }}
+        >
           <FiX size={48} className="text-stone-400" strokeWidth={1} />
         </button>
       </div>
@@ -98,17 +102,35 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
             <p className="mt-3 leading-loose">{work.summary}</p>
             {work.awards != null && 0 < work.awards.length && (
               <div className="flex flex-wrap mt-2">
-                {work.awards.map((award) => (
-                  <span
+                {work.awards.map((award, i) => (
+                  <motion.span
                     key={award}
                     className="block px-2 py-1 mt-2 mr-1 text-sm font-bold text-white bg-yellow-500 rounded-full w-max"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      bounce: 0.1,
+                      duration: 0.8,
+                      delay: i * 0.1 + 0.2,
+                    }}
                   >
                     {award}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             )}
-            <div className="absolute bottom-0 right-0 hidden overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 lg:flex">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                bounce: 0.1,
+                duration: 0.2,
+                delay: (work.awards?.length ?? 0) * 0.1 + 0.2,
+              }}
+              className="absolute bottom-0 right-0 hidden overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 lg:flex"
+            >
               {links?.map((link) => {
                 const Icon = Icons[link.type]
                 return (
@@ -121,29 +143,34 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
                   </OuterLink>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
           <motion.div
             layoutId={`thumbnail-${work.title}`}
             className={classNames("relative mx-auto", "max-w-full")}
           >
-            <video
-              src={
-                work.movieUrl?.startsWith("https://drive.google.com/file/d/")
-                  ? `https://drive.google.com/uc?id=${
-                      work.movieUrl?.match(
-                        /https\:\/\/drive\.google\.com\/file\/d\/(?<fileId>(\w|-)+)/,
-                      )?.groups?.fileId ?? ""
-                    }&export=download`
-                  : work.movieUrl
-              }
-              poster={work.imageUrl}
-              controls
-              autoPlay
-              muted
-              playsInline
-              className="mx-auto max-h-[640px]"
-            />
+            {work.movieUrl == null ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={work.imageUrl} alt="" className="object-fit mx-auto max-h-[640px]" />
+            ) : (
+              <video
+                src={
+                  work.movieUrl?.startsWith("https://drive.google.com/file/d/")
+                    ? `https://drive.google.com/uc?id=${
+                        work.movieUrl?.match(
+                          /https\:\/\/drive\.google\.com\/file\/d\/(?<fileId>(\w|-)+)/,
+                        )?.groups?.fileId ?? ""
+                      }&export=download`
+                    : work.movieUrl
+                }
+                poster={work.imageUrl}
+                controls
+                autoPlay
+                muted
+                playsInline
+                className="mx-auto max-h-[640px]"
+              />
+            )}
           </motion.div>
           <div className="flex mx-6 ml-auto overflow-hidden transition border rounded-full w-max border-slate-300 hover:border-slate-400 sm:mx-auto lg:hidden">
             {links?.map((link) => {
@@ -160,7 +187,17 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
             })}
           </div>
         </motion.div>
-        <div className="flex w-full px-6 mt-16 lg:mt-24">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.1,
+            duration: 0.8,
+            delay: ((work.awards?.length ?? 0) + 1) * 0.1 + 0.5,
+          }}
+          className="flex w-full px-6 mt-16 lg:mt-24"
+        >
           <div className="sticky top-0 mr-8 hidden w-[16vw] shrink-0 text-sm text-black/70 sm:block">
             <h4 className="font-bold font-heading">目次</h4>
             <ol className="flex flex-col mt-2">
@@ -234,7 +271,7 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
               </section>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

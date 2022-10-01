@@ -12,6 +12,7 @@ const nextConfig = {
   },
   experimental: {
     scrollRestoration: true,
+    images: { allowFutureImage: true },
   },
 }
 

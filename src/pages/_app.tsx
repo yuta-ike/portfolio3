@@ -18,7 +18,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <SWRConfig>
-      <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />
       </AnimatePresence>
     </SWRConfig>
