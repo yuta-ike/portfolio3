@@ -45,6 +45,8 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
       ? null
       : typeof work.period === "string"
       ? work.period
+      : work.period.start === work.period.end
+      ? `${work.period.start}`
       : work.period.end != null
       ? `${work.period.start} ~ ${work.period.end}`
       : `${work.period.start} ~ 現在`

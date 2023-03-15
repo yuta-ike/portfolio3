@@ -6,6 +6,162 @@ const WORKS: Work[] = [
   {
     priority: 30,
     type: "Web",
+    title: "BabyC",
+    summary:
+      "育児日記から、AIがユーザーの悩みや不安を抽出し、同じ悩みを持つユーザーや行政情報と繋げてくれるサービスです。",
+    awards: ["みやぎハッカソン2023 最優秀賞"],
+    imageUrl: "/babyc/demo.png",
+    movieUrl: "https://drive.google.com/file/d/1qXBDDGAYDfosu4FuVD4awROlAJHgwjpO/preview",
+    period: {
+      start: "2023-03",
+      end: "2023-03",
+    },
+    duration: {
+      day: 3,
+    },
+    links: [
+      {
+        url: "https://github.com/yuta-ike/mynumber-inapp",
+        label: "github",
+        type: "github",
+      },
+      {
+        url: "https://github.com/yuta-ike/miyagi_backend",
+        label: "github",
+        type: "github",
+      },
+      {
+        url: "https://docs.google.com/presentation/d/1VwPTP476D4m8ZPMGjVgdsJFgJyK9c5MP/edit?usp=sharing&ouid=110469674242767571994&rtpof=true&sd=true",
+        label: "スライド",
+        type: "slide",
+      },
+    ],
+    competition: ["みやぎハッカソン2023"],
+    members: { total: 5, description: "フロント2人、バックエンド1人、機械学習1人、デザイナー1人" },
+    roles: ["リーダー", "フロントエンド", "バックエンド"],
+    techStack: [
+      {
+        category: "frontend",
+        techs: ["typescript", "nextjs", "tailwindcss", { label: "MUI", id: "mui" }, "vercel"],
+      },
+      {
+        category: "backend",
+        techs: [
+          "nodejs",
+          "typescript",
+          "express",
+          { label: "Railway", id: "railway" },
+          "docker",
+          "postgresql",
+        ],
+      },
+      {
+        category: "others",
+        techs: ["github_actions", { label: "提供SDK", id: "others" }],
+      },
+    ],
+    sections: [
+      {
+        heading: "感想",
+        body:
+          "1週間前からプロダクトに関する話し合いをはじめ、ほぼ毎日オンラインでミーティングを行いました。" +
+          "ハッカソン前夜に作成物が決まり、ハッカソン初日は環境構築やデザインに時間を費やす形となりましたが、なんとか発表までに形にすることができました。" +
+          "個人的には話し合いの段階ではかなり苦しい思いをしましたが、ユーザーの課題・ストーリー・コンセプトなどを考え抜くことの重要性を改めて感じる結果となりました。",
+      },
+      {
+        heading: "貢献",
+        body: `・フロントエンド・バックエンドの環境構築、自動デプロイの設定
+・API設計
+・フロントエンド・バックエンドの一部の実装
+・プロジェクトリーダー`,
+      },
+    ],
+  },
+  {
+    priority: 30,
+    type: "Web",
+    title: "リカプセル",
+    summary:
+      "友達どうしで、地図上にデジタルタイムカプセルを埋めることができるサービスです。1年後、同じメンバーで埋めた場所に集まることで、カプセルを開封することができます。写真や動画を保存することができます",
+    awards: [
+      "JPHacks2022 イノベーター認定",
+      "JPHacks2022 MapBox賞",
+      "JPHacks2022 ノキア賞",
+      "JPHacks2022 オーディエンス投票4位",
+    ],
+    imageUrl: "/recapsule/demo.jpg",
+    layout: {
+      blur: true,
+    },
+    movieUrl: "/recapsule/demo.mp4",
+    period: {
+      start: "2022-10",
+      end: "2022-11",
+    },
+    duration: {
+      month: 2,
+    },
+    links: [
+      {
+        url: "https://github.com/jphacks/F_2207",
+        label: "github",
+        type: "github",
+      },
+      {
+        url: "https://docs.google.com/presentation/d/1YHIVhBbBZg8ibTSv5m1g5iwdqrj9OZwuVY047qZdWis/edit?usp=sharing",
+        label: "スライド",
+        type: "slide",
+      },
+      {
+        url: "https://recapsule.vercel.app/",
+        label: "プロダクト",
+        type: "demo",
+      },
+    ],
+    competition: ["JPHacks2022"],
+    members: { total: 4, description: "フロント2人、デザイナー1人、プレゼンター1人" },
+    roles: ["リーダー", "フロントエンド"],
+    techStack: [
+      {
+        category: "frontend",
+        techs: [
+          "typescript",
+          "nextjs",
+          "tailwindcss",
+          { label: "Mantine", id: "mantine" },
+          "vercel",
+          { label: "MapBox", id: "mapbox" },
+        ],
+      },
+      {
+        category: "backend",
+        techs: ["firebase_auth", "firestore", "firebase_storage"],
+      },
+      {
+        category: "others",
+        techs: ["github_actions"],
+      },
+    ],
+    sections: [
+      {
+        heading: "貢献",
+        body: `・ARの実装
+・GPS/加速度センサー周りの実装
+・バックエンド繋ぎ込み
+・地図周りのパフォーマンスチューニング
+・プロジェクトリーダー`,
+      },
+      {
+        heading: "技術的工夫点",
+        body: `・Location-based ARを半分自前で実装
+・Firestoreを利用し、複数人で操作する画面をリアルタイム同期
+・加速度センサーを利用し「スマホを振るとタイムカプセルが開く」アクションを実現`,
+      },
+    ],
+  },
+  {
+    priority: 20,
+    type: "Web",
     title: "ふろちゃでぼっと",
     summary:
       "LINE Botを作成できる教育用ビジュアルプログラミングツールです。プログラムが即時に実機に反映されるほか、実行フローがリアルタイムで可視化されるなど、子供たちが躓くことのないよう工夫しています。",
@@ -31,8 +187,18 @@ const WORKS: Work[] = [
         label: "twitter",
         type: "twitter",
       },
+      {
+        url: "https://protopedia.net/prototype/3586",
+        label: "Protopedia",
+        type: "others",
+      },
+      {
+        url: "https://debot.vercel.app/login",
+        label: "デモ",
+        type: "demo",
+      },
     ],
-    competition: ["大学の実習", "技育展"],
+    competition: ["大学の実習", "技育展", "ヒーローズリーグ"],
     members: { total: 6, description: "フロント4人、バックエンド2人" },
     roles: ["リーダー", "ノードエディタ", "プログラムの実行処理", "LIFF繋ぎこみ"],
     techStack: [
