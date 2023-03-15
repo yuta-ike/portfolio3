@@ -21,14 +21,14 @@ const WORKS: Work[] = [
     },
     links: [
       {
-        url: "https://github.com/yuta-ike/mynumber-inapp",
+        url: "https://github.com/yuta-ike/miyagi_backend",
         label: "github",
         type: "github",
       },
       {
-        url: "https://github.com/yuta-ike/miyagi_backend",
-        label: "github",
-        type: "github",
+        url: "https://twitter.com/Selria1/status/1632651734341373953?s=20",
+        label: "twitter",
+        type: "twitter",
       },
       {
         url: "https://docs.google.com/presentation/d/1VwPTP476D4m8ZPMGjVgdsJFgJyK9c5MP/edit?usp=sharing&ouid=110469674242767571994&rtpof=true&sd=true",
