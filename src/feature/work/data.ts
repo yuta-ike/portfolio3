@@ -1,7 +1,5 @@
 import { Work } from "./type"
 
-// 再生開始時間
-
 const WORKS: Work[] = [
   {
     priority: 30,
@@ -156,6 +154,80 @@ const WORKS: Work[] = [
         body: `・Location-based ARを半分自前で実装
 ・Firestoreを利用し、複数人で操作する画面をリアルタイム同期
 ・加速度センサーを利用し「スマホを振るとタイムカプセルが開く」アクションを実現`,
+      },
+    ],
+  },
+  {
+    priority: 10,
+    type: "Web",
+    title: "Trip Timeline",
+    summary:
+      "TripTimelineは、旅行の写真を簡単に共有できるサービスです。アプリ内で立ち上げたカメラで撮影することで写真が自動で共有されるほか、日時や位置情報をもとに自動でアルバムが作成されます。",
+    awards: ["Open Hack U 2022 Spring OSAKA 優秀賞"],
+    imageUrl: "/trip-timeline/demo.png",
+    movieUrl:
+      "https://onedrive.live.com/download?cid=1A277CC5A368BBA5&resid=1A277CC5A368BBA5%21216&authkey=AAnPoiJ80h-75eE",
+    period: {
+      start: "2023-03",
+      end: "2023-03",
+    },
+    duration: {
+      day: 7,
+    },
+    links: [
+      {
+        url: "https://hacku.yahoo.co.jp/hacku2022spring_osaka/#:~:text=%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82-,%E3%80%90%E5%84%AA%E7%A7%80%E8%B3%9E%E3%80%91,-%E4%BD%9C%E5%93%81%E5%90%8D",
+        label: "公式ページ",
+        type: "others",
+      },
+      {
+        url: "https://github.com/YOUyskw/travel_photos",
+        label: "github (frontend)",
+        type: "github",
+      },
+      {
+        url: "https://github.com/YOUyskw/travel_photos_python",
+        label: "github (backend)",
+        type: "github",
+      },
+      {
+        url: "https://docs.google.com/presentation/d/1CHTXldGXQpo049RR6jpQRPuurqPYy_lrVf3oO6hQTOc/edit?usp=sharing",
+        label: "発表スライド",
+        type: "slide",
+      },
+    ],
+    competition: ["Open Hack U 2022 Spring OSAKA"],
+    members: { total: 5, description: "フロント4人、画像処理1人" },
+    roles: ["フロントエンド", "バックエンド（繋ぎ込み）"],
+    techStack: [
+      {
+        category: "frontend",
+        techs: [
+          "typescript",
+          "nextjs",
+          "tailwindcss",
+          { id: "daisyui", label: "daisyUI" },
+          "vercel",
+        ],
+      },
+      {
+        category: "backend",
+        techs: ["firestore", "firebase_storage", "flask", "python"],
+      },
+      {
+        category: { id: "image", label: "画像処理" },
+        techs: ["python", { id: "pytorch", label: "Torchvision" }],
+      },
+    ],
+    sections: [
+      {
+        heading: "感想",
+        body: "研究室の同期・後輩と出場しました。予定が合わず時間が少ない中での実装でしたが、何とか完成させることができました。",
+      },
+      {
+        heading: "貢献",
+        body: `・フロントエンドのUIのブラッシュアップなど
+・バックエンドのML部分とサーバの繋ぎ込み`,
       },
     ],
   },

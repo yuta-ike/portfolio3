@@ -70,6 +70,7 @@ export type Work = {
     category:
       | "frontend"
       | "backend"
+      | "ml"
       | "others"
       | {
           id: string

@@ -32,6 +32,8 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ work }) => {
         ? ({ id: "frontend", label: "フロントエンド" } as const)
         : category === "backend"
         ? ({ id: "backend", label: "バックエンド" } as const)
+        : category === "ml"
+        ? ({ id: "ml", label: "機械学習" } as const)
         : category === "others"
         ? ({ id: "others", label: "その他" } as const)
         : category,
