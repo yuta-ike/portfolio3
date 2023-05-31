@@ -174,6 +174,9 @@ const WORKS: Work[] = [
     duration: {
       day: 7,
     },
+    layout: {
+      blur: true,
+    },
     links: [
       {
         url: "https://hacku.yahoo.co.jp/hacku2022spring_osaka/#:~:text=%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82-,%E3%80%90%E5%84%AA%E7%A7%80%E8%B3%9E%E3%80%91,-%E4%BD%9C%E5%93%81%E5%90%8D",
